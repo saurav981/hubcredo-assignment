@@ -24,6 +24,12 @@ app.use(cookieParser());
 
 // Routes
 app.use("/api/v1/auth", userRouter);
+app.get("/", (req, res) =>
+  res.json({
+    status: "ok",
+    message: "Your backend is up, running, and ready to serve",
+  })
+);
 
 // Handle undefined routes
 app.all("*", (req, res) => {
